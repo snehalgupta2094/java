@@ -1,4 +1,4 @@
-package LLD.VotingHackthon;
+package LLD;
 
 import java.util.ArrayList;
 import java.util.Arrays;
