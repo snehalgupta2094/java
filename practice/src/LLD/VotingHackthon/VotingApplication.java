@@ -17,9 +17,11 @@ public class VotingApplication {
               weight--;
           }
         }
-
+        //convert map to list of entry of objects
+        //sort entry object by value
         List<Map.Entry<String, Integer>> entryList = new ArrayList<>(voteCountMap.entrySet());
         entryList.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+        //fetch key of entry object from list after sorting
         List<String> sortedVotes = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : entryList) {
             sortedVotes.add(entry.getKey());
