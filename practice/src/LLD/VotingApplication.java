@@ -11,9 +11,9 @@ public class VotingApplication {
     public static void getWinner(List<List<String>> votes){
         Map<String, Integer> voteCountMap=new HashMap<>();
         for(List<String> vote: votes){
-          int weight=vote.size();
+          int weight=vote.size()-1;
           for(int i=0;i<vote.size();i++){
-              voteCountMap.put(vote.get(i),voteCountMap.getOrDefault(vote.get(i),0)+weight);
+              voteCountMap.put(vote.get(i),voteCountMap.getOrDefault(vote.get(i),1)+weight);
               weight--;
           }
         }
@@ -24,7 +24,7 @@ public class VotingApplication {
         //fetch key of entry object from list after sorting
         List<String> sortedVotes = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : entryList) {
-            sortedVotes.add(entry.getKey());
+            sortedVotes.add(entry.getKey()+":"+entry.getValue());
         }
 
         System.out.println("Sorted Candidates: " + sortedVotes);
@@ -32,10 +32,11 @@ public class VotingApplication {
     }
     public static void main(String[] args) {
       List<List<String>> votes=new ArrayList<>();
-      votes.add(Arrays.asList("A", "B", "C"));
-      votes.add(Arrays.asList("A", "C", "D"));
+      votes.add(Arrays.asList("C", "A", "D"));
       votes.add(Arrays.asList("D", "A", "C"));
-      getWinner(votes);
+      votes.add(Arrays.asList("A", "B", "C"));
+      votes.add(Arrays.asList("C", "D"));
+        getWinner(votes);
     }
 
 }
