@@ -1,7 +1,6 @@
-package LLD;
+package LLD.caching;
 
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 class LRUCache {
     LinkedHashMap<Integer,Integer> cache;
