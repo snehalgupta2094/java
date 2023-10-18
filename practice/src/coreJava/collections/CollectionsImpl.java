@@ -53,7 +53,6 @@ class Employee implements Comparable<Employee>{
         this.salary=salary;
         this.age=age;
     }
-
     @Override
     public int compareTo(Employee o) {
         return Integer.compare(this.age,o.age);
