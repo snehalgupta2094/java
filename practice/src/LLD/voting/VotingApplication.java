@@ -1,4 +1,4 @@
-package LLD;
+package LLD.voting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
