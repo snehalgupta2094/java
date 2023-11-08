@@ -33,24 +33,18 @@ public class MergeShifts {
         for(int index=1;index<shiftList.size();index++)
         {
             Shift currentShift=shiftList.get(index);
-            if(previousShift.endTime>=currentShift.startTime){
-           //     if(previousShift.endTime<currentShift.endTime) {
+            if(previousShift.endTime>=currentShift.startTime && previousShift.endTime<=currentShift.endTime){
                     Shift mergeShift = new Shift(previousShift.startTime, currentShift.endTime);
                     mergedShifts.add(mergeShift);
                     previousShift.endTime = currentShift.endTime;
                     previousShift.startTime= currentShift.startTime;
-           //     }
+
             }
             else
             {
                 mergedShifts.add(currentShift);
                 previousShift=currentShift;
             }
-            System.out.println("prev end:"+previousShift.endTime);
-            System.out.println("curr end:"+currentShift.endTime);
-            System.out.println("prev start:"+previousShift.endTime);
-            System.out.println("curr start:"+currentShift.endTime);
-            System.out.println(mergedShifts);
         }
         return mergedShifts;
     }
