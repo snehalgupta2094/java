@@ -29,16 +29,18 @@ public class MergeShifts {
         }
 
         Collections.sort(shiftList,(shift1,shift2)->Integer.compare(shift1.startTime,shift2.startTime));
+
         Shift previousShift=shiftList.get(0);
         for(int index=1;index<shiftList.size();index++)
         {
             Shift currentShift=shiftList.get(index);
-            if(previousShift.endTime>=currentShift.startTime && previousShift.endTime<=currentShift.endTime){
+            if(previousShift.endTime>currentShift.endTime){
+                continue;
+            }
+            if(previousShift.endTime>=currentShift.startTime){
                     Shift mergeShift = new Shift(previousShift.startTime, currentShift.endTime);
                     mergedShifts.add(mergeShift);
                     previousShift.endTime = currentShift.endTime;
-                    previousShift.startTime= currentShift.startTime;
-
             }
             else
             {
@@ -78,10 +80,6 @@ public class MergeShifts {
         shiftList.add(shift3);
         mergedLists=mergeShits(shiftList);
         System.out.println(mergedLists);
-
-        //[8,11] [10,24] [14,19]--after sort
-        //[8,24] [14,19]
-        //11,11 24,24
     }
 
 }
