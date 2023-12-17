@@ -3,8 +3,8 @@ package designPatterns.strategy.duckApplication;
 public class RedheadDuck extends Duck {
 
     public RedheadDuck(){
-        quackBehaviour=new Mute();
-        flyBehaviour=new FlyWithWings();
+        setQuackBehavior(new Mute());
+        setFlyBehavior(new FlyWithWings());
     }
 
     @Override

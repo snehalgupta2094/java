@@ -3,8 +3,8 @@ package designPatterns.strategy.duckApplication;
 public class MallardDuck extends Duck {
 
     public MallardDuck(){
-        quackBehaviour=new Quack();
-        flyBehaviour=new FlyWithWings();
+        setQuackBehavior(new Quack());
+        setFlyBehavior(new FlyWithWings());
     }
 
     @Override

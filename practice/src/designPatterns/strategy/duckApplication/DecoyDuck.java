@@ -3,8 +3,8 @@ package designPatterns.strategy.duckApplication;
 public class DecoyDuck extends Duck {
 
     public DecoyDuck(){
-        quackBehaviour=new Squeak();
-        flyBehaviour=new FlyWithWings();
+        setQuackBehavior(new Squeak());
+        setFlyBehavior(new FlyWithWings());
     }
 
     @Override

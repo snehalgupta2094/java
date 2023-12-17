@@ -3,8 +3,8 @@ package designPatterns.strategy.duckApplication;
 public class RubberDuck extends Duck {
 
     public RubberDuck(){
-        quackBehaviour=new Squeak();
-        flyBehaviour=new FlyNoWay();
+        setQuackBehavior(new Squeak());
+        setFlyBehavior(new FlyNoWay());
     }
 
     @Override
