@@ -3,7 +3,7 @@ package designPatterns.adapter.duckApplication;
 public class DuckSimulator {
     //Target interface: Turkey
     //Adapter: TurkeyAdapter
-    //Adaptee: Duck interface
+    //Adaptee: Duck
     public static void main(String[] args) {
         Duck mallardDuck=new MallardDuck();
         testDuck(mallardDuck);
