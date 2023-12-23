@@ -1,4 +1,4 @@
-package designPatterns.adapter;
+package designPatterns.adapter.duckApplication;
 
 public interface Turkey {
 void gobble();

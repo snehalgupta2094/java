@@ -1,4 +1,4 @@
-package designPatterns.adapter;
+package designPatterns.adapter.duckApplication;
 
 public class DuckSimulator {
     //Target interface: Turkey
