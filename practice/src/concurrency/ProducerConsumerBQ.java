@@ -37,18 +37,8 @@ public class ProducerConsumerBQ {
 
     public static void main(String[] args) {
         BlockingQueueImpl q=new BlockingQueueImpl();
-        Thread t1=new Thread(new Runnable() {
-            @Override
-            public void run() {
-                q.produce();
-            }
-        });
-        Thread t2=new Thread(new Runnable() {
-            @Override
-            public void run() {
-                q.consume();
-            }
-        });
+        Thread t1=new Thread(()-> q.produce());
+        Thread t2=new Thread(()-> q.consume());
         t1.start();
         t2.start();
         try {
