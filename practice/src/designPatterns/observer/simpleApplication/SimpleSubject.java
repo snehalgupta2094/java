@@ -1,4 +1,4 @@
-package designPatterns.observer;
+package designPatterns.observer.simpleApplication;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ public class SimpleSubject implements Subject{
     private ArrayList<Observer> observers;
     private int value=0;
     public SimpleSubject(){
-        this.observers=new ArrayList<Observer>();
+        this.observers=new ArrayList<>();
     }
 
 
@@ -17,7 +17,10 @@ public class SimpleSubject implements Subject{
 
     @Override
     public void removeObserver(Observer o) {
-        observers.remove(o);
+        int i = observers.indexOf(o);
+        if (i >= 0) {
+            observers.remove(i);
+        }
     }
 
     //Suppose value in subject class changes then notify all observers about update in value
@@ -34,6 +37,6 @@ public class SimpleSubject implements Subject{
     }
 
     public int getValue(){
-        return value;
+        return this.value;
     }
 }

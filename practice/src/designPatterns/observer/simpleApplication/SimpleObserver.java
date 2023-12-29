@@ -1,4 +1,4 @@
-package designPatterns.observer;
+package designPatterns.observer.simpleApplication;
 
 public class SimpleObserver implements Observer{
     private int value;
@@ -7,7 +7,7 @@ public class SimpleObserver implements Observer{
     public SimpleObserver(SimpleSubject simpleSubject){
         this.simpleSubject=simpleSubject;
         //When new Observer class is created register that observer in subject.
-        simpleSubject.registerObserver(this);
+       simpleSubject.registerObserver(this);
     }
 
     @Override
