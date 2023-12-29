@@ -1,5 +1,5 @@
 package designPatterns.observer.simpleApplication;
 
 public interface Observer {
-    public void update(int value);
+    void update(int value);
 }
