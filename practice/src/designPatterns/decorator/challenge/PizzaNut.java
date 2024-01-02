@@ -15,5 +15,9 @@ public class PizzaNut {
         pizza1=new Cheese(pizza1);
         System.out.println(pizza1.getDescription()
                            + " $" + pizza1.cost());
+
+        String s="kjhsiuhaaaaa";
+        String key=s.substring(7 - 3, 7);
+        System.out.println(key);
     }
 }
