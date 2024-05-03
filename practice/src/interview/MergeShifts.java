@@ -2,6 +2,7 @@ package interview;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 class Shift{
@@ -28,7 +29,7 @@ public class MergeShifts {
             return shiftList;
         }
 
-        Collections.sort(shiftList,(shift1,shift2)->Integer.compare(shift1.startTime,shift2.startTime));
+        shiftList.sort(Comparator.comparingInt(shift -> shift.startTime));
 
         Shift previousShift=shiftList.get(0);
         for(int index=1;index<shiftList.size();index++)
@@ -75,6 +76,9 @@ public class MergeShifts {
         shift1=new Shift(10,24);
         shift2=new Shift(8,11);
         shift3=new Shift(14,19);
+
+        //8,11 10,24 14,19
+        //
         shiftList.add(shift1);
         shiftList.add(shift2);
         shiftList.add(shift3);
